@@ -4,38 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kabarmu Hari Ini 💌</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      color: #333;
+      background: url('https://i.ibb.co/2N9CFk6/pink-wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #444;
       text-align: center;
       padding: 30px 20px;
     }
-    h1 {
-      font-size: 2.5em;
-      color: #ff69b4;
-      text-shadow: 1px 1px 3px white;
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #ff69b4;
+      margin-bottom: 5px;
+    }
+
     p {
-      font-size: 1.3em;
+      font-size: 1.2em;
       margin-bottom: 20px;
     }
+
     input, textarea, select {
       padding: 10px;
-      width: 80%;
-      max-width: 400px;
+      width: 100%;
       border: 2px solid #ff69b4;
       border-radius: 15px;
       font-size: 1em;
       margin-bottom: 20px;
-      background-color: #fff8fb;
+      background-color: #fff;
     }
+
     textarea {
       resize: none;
       height: 100px;
     }
+
     button {
       background-color: #ff69b4;
       color: white;
@@ -46,87 +61,68 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
+
     button:hover {
       transform: scale(1.1);
       background-color: #ff85c1;
     }
+
     .emoji {
-      font-size: 2em;
+      font-size: 1.8em;
+      margin-top: 10px;
     }
-    .funny-img {
-      width: 80px;
-      margin: 10px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    .funny-img:hover {
-      transform: rotate(5deg) scale(1.1);
-    }
-    audio {
-      display: none;
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <h1>💌 How Are You Today?</h1>
-  <p><strong>Gimana kabarmu hari ini?</strong></p>
+  <div class="card">
+    <h1>💌 Kabarmu Hari Ini</h1>
+    <p><strong>Hai! Gimana kabarmu hari ini? 🌸</strong></p>
 
-  <!-- Gambar Lucu -->
-  <div>
-    <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" class="funny-img">
-    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" class="funny-img">
-    <img src="https://media.giphy.com/media/xUPGcEliCc7bETyfO8/giphy.gif" class="funny-img">
+    <form id="dayForm">
+      <input type="text" id="answerInput" placeholder="Tulis perasaanmu di sini... 😊" required>
+      <select id="ratingInput" required>
+        <option value="">Rate hari ini berapa? 🌟</option>
+        <option>1 ⭐</option>
+        <option>2 ⭐⭐</option>
+        <option>3 ⭐⭐⭐</option>
+        <option>4 ⭐⭐⭐⭐</option>
+        <option>5 ⭐⭐⭐⭐⭐</option>
+      </select>
+      <textarea id="storyInput" placeholder="Kalau ada cerita, tulis di sini yaa 💬"></textarea>
+      <button type="submit">Kirim Jawaban 💌</button>
+    </form>
+
+    <div class="emoji">🌸 💖 🌷 🌈 🦋</div>
   </div>
 
-  <form id="dayForm">
-    <!-- Pertanyaan Perasaan -->
-    <input type="text" name="answer" id="answerInput" placeholder="Tulis perasaanmu di sini... 😊" required />
+  <footer>
+    Dibuat dengan 💗 untukmu
+  </footer>
 
-    <!-- Pertanyaan Rating -->
-    <select id="ratingInput" name="rating" required>
-      <option value="">Rate buat hari ini berapa?? 🌟</option>
-      <option>1 ⭐</option>
-      <option>2 ⭐⭐</option>
-      <option>3 ⭐⭐⭐</option>
-      <option>4 ⭐⭐⭐⭐</option>
-      <option>5 ⭐⭐⭐⭐⭐</option>
-    </select>
-
-    <!-- Pertanyaan Cerita -->
-    <textarea id="storyInput" name="story" placeholder="Kalo ada yang mau diceritain, tulis disini yaaa 💬"></textarea>
-
-    <br>
-    <button type="submit">Kirim Jawaban 💌</button>
-  </form>
-
-  <p class="emoji">🌈 🐣 🍭 🧸 🐰 🌼</p>
-
-  <!-- Musik -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung audio :(
-  </audio>
-
-  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("6T-E33Fr2SoJqXHZn");
+    emailjs.init("6T-E33Fr2SoJqXHZn"); // Public Key dari EmailJS
 
     document.getElementById("dayForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      emailjs.send("service_dikl4a4", "template_e9o08u1", {
+      const params = {
         answer: document.getElementById("answerInput").value,
         rating: document.getElementById("ratingInput").value,
         story: document.getElementById("storyInput").value
-      })
+      };
+
+      emailjs.send("service_dikl4a4", "template_e9o08u1", params)
       .then(function() {
-        alert("✅ Pesan berhasil dikirim ke email!");
-        document.getElementById("answerInput").value = "";
-        document.getElementById("ratingInput").value = "";
-        document.getElementById("storyInput").value = "";
+        alert("MAKASII YAAA ❤️ Pesan kamu sudah terkirim!");
+        document.getElementById("dayForm").reset();
       }, function(error) {
         alert("❌ Gagal mengirim pesan: " + JSON.stringify(error));
       });
