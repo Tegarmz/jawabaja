@@ -89,6 +89,75 @@
       <input type="text" id="answerInput" placeholder="Tulis perasaanmu di sini... 😊" required>
       <select id="ratingInput" required>
         <option value="">Rate hari ini berapa? 🌟</option>
+        <option value="1 Bintang"> ⭐</option>
+        <option value="2 Bintang"> ⭐⭐</option>
+        <option value="3 Bintang"> ⭐⭐⭐</option>
+        <option value="4 Bintang"> ⭐⭐⭐⭐</option>
+        <option value="5 Bintang"> ⭐⭐⭐⭐⭐</option>
+      </select>
+      <textarea id="storyInput" placeholder="Kalau ada cerita, tulis di sini yaa 💬"></textarea>
+      <button type="submit"> Semoga Hari Besok Lebih seruuyaa 💌</button>
+    </form>
+
+    <div class="emoji">🌸 💖 🌷 🌈 🦋</div>
+  </div>
+
+  <footer>
+    ISTIRAHATTTT JANGANN GADANGG
+  </footer>
+
+  <!-- Menggunakan library versi terbaru -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Diinisialisasi dengan Public Key barumu
+    emailjs.init("30MbgVXxfm0FdJHQY"); 
+
+    document.getElementById("dayForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const params = {
+        answer: document.getElementById("answerInput").value,
+        rating: document.getElementById("ratingInput").value,
+        story: document.getElementById("storyInput").value
+      };
+
+      // Mengirim menggunakan Service ID dan Template ID barumu yang sudah di-reconnect
+      emailjs.send("service_9d8npqb", "template_dmg1tem", params)
+      .then(function() {
+        alert("SEMOGA BESOK LEBIH BAIK DARI INI YAA ❤️");
+        document.getElementById("dayForm").reset();
+      }, function(error) {
+        alert("❌ Gagal mengirim pesan: " + JSON.stringify(error));
+      });
+    });
+  </script>
+
+</body>
+</html>
+    }
+
+    .emoji {
+      font-size: 1.8em;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>💌 Kabarnyaa gimana hari ini</h1>
+    <p><strong>Hai! Gimana kabarmu hari ini? 🌸</strong></p>
+
+    <form id="dayForm">
+      <input type="text" id="answerInput" placeholder="Tulis perasaanmu di sini... 😊" required>
+      <select id="ratingInput" required>
+        <option value="">Rate hari ini berapa? 🌟</option>
         <option> ⭐</option>
         <option> ⭐⭐</option>
         <option> ⭐⭐⭐</option>
@@ -119,7 +188,7 @@
         story: document.getElementById("storyInput").value
       };
 
-      emailjs.send("service_dikl4a4", "template_e9o08u1", params)
+      emailjs.send("service_dikl4a4", "template_dmg1tem", params)
       .then(function() {
         alert("SEMOGA BESOK LEBIH BAIK DARI INI YAA");
         document.getElementById("dayForm").reset();
