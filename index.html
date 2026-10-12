@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>How Ur Dayyy? 💌</title>
+  <title>How Ur Dayyy Pitaaa? 💌</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -716,7 +716,7 @@
         id="successMessage"
         role="status"
       >
-        💖 Terkirimmm! Semoga besok ada lebih banyak alasan buat senyum 🌸
+        💖 Terkirimmm! Semoga Cepett Beress Osjurrnya wkwkwkwk 🌸
       </div>
 
 
@@ -734,7 +734,7 @@
 
 
   <footer>
-    ISTIRAHATTTT 🌙💗
+    🌙💗
   </footer>
 
 
